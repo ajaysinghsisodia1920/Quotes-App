@@ -1,0 +1,11 @@
+<form class="container" [formGroup]="registerForm">
+    <h4>Register</h4>
+    <input type="email" [formControl]="email" />
+    <h5 class="red-text" [hidden]="email.valid || email.untouched">Enter Correct email</h5>
+    <input type="password" [formControl]="password" />
+    <h5 
+    class="red-text" 
+    [hidden]="password.valid || password.untouched">Password is required and must be > 6 digits</h5>
+    <button class="btn green" [disabled]="registerForm.invalid" (click)="register()">Register</button>
+    <button class="btn red" style="margin-left: 20px;" (click)="reset()">Reset</button>
+</form>
